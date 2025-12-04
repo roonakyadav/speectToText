@@ -1,4 +1,4 @@
-// commit 2
+// commit 3
 // getting the speech recognition
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();

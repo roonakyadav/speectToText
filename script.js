@@ -14,7 +14,8 @@ let notes = JSON.parse(localStorage.getItem('notes')) || [];
 // Handle window load to initialize notes from storage
 window.onload = function () {
     const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-    notes = storedNotes;
+    // Ensure all notes are strings for safety
+    notes = storedNotes.filter(note => typeof note === 'string' || (typeof note === 'number' && !isNaN(note))).map(note => String(note));
     updateNotesDisplay();
 };
 
